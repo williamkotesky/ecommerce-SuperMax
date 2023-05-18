@@ -1,0 +1,50 @@
+.navbarDownContainer {
+  width: 100%;
+  height: 7vh;
+  background-color: #faa508;
+}
+
+.navbarDownContainer ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbarDownContainer ul li a.active {
+  color: violet;
+  background-color: blue;
+}
+
+.navbarDownContainer .newProducts,
+.navbarDownContainer .about {
+  display: none;
+}
+
+.dropdownOn {
+  height: 20vh;
+  width: 5rem;
+  background-color: #faa508;
+  position: absolute;
+  right: 5px;
+}
+
+.dropdownOn ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dropdownOn li {
+  text-align: center;
+}
+
+.dropdownOff {
+  height: 20vh;
+  width: 5rem;
+  display: none;
+}
