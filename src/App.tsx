@@ -1,12 +1,14 @@
-import { RouterProvider } from "react-router-dom";
+import AppRoutes from "./utilities/AppRoutes";
 import NavbarUp from "./layout/NavbarUp";
-import router from "./utilities/Routes";
+import NavbarDown from "./layout/NavbarDown";
 
 function App() {
   return (
     <>
       <NavbarUp />
-      <RouterProvider router={router} />
+      <NavbarDown />
+
+      <AppRoutes />
     </>
   );
 }

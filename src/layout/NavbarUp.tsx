@@ -1,4 +1,3 @@
-// import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import styles from "./NavbarUp.module.css";
 import logo from "../assets/images/superMaxLogo.png";

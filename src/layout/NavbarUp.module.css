@@ -183,6 +183,11 @@
     font-weight: 700;
   }
 
+  .searchMobileDisplayBlock {
+    display: none;
+    left: -100%;
+  }
+
   .personalInfo {
     width: 20%;
     justify-content: space-evenly;
