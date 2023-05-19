@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.navbarDownContainer ul li {
+  cursor: pointer;
+}
+
 .navbarDownContainer ul li a.active {
   color: violet;
   background-color: blue;
@@ -27,7 +31,7 @@
   width: 5rem;
   background-color: #faa508;
   position: absolute;
-  right: 5px;
+  right: 3%;
 }
 
 .dropdownOn ul {
@@ -47,4 +51,34 @@
   height: 20vh;
   width: 5rem;
   display: none;
+}
+
+@media (min-width: 586px) {
+  .dropdownOn {
+    right: 4%;
+  }
+}
+
+@media (min-width: 650px) {
+  .dropdownOn {
+    right: 5%;
+  }
+}
+
+@media (min-width: 735px) {
+  .dropdownOn {
+    right: 6%;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbarDownContainer .more,
+  .dropdownOn {
+    display: none;
+  }
+
+  .navbarDownContainer .newProducts,
+  .navbarDownContainer .about {
+    display: block;
+  }
 }

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import styles from "./NavbarUp.module.css";
 import logo from "../assets/images/superMaxLogo.png";
@@ -61,15 +62,21 @@ function NavbarUp() {
           <li>
             <div className={styles.personalInfo}>
               <div className={styles.user}>
-                <FontAwesomeIcon icon={faUser} />
+                <NavLink to="/informacoesConta">
+                  <FontAwesomeIcon icon={faUser} />
+                </NavLink>
               </div>
               <div className={styles.whishlist}>
-                <FontAwesomeIcon icon={faHeart} />
-                <span className={styles.navbarNotifications}>1</span>
+                <NavLink to="/listaDeDesejos">
+                  <FontAwesomeIcon icon={faHeart} />
+                  <span className={styles.navbarNotifications}>1</span>
+                </NavLink>
               </div>
               <div className={styles.cart}>
-                <FontAwesomeIcon icon={faCartShopping} />
-                <span className={styles.navbarNotifications}>1</span>
+                <NavLink to="/carrinhoDeCompras">
+                  <FontAwesomeIcon icon={faCartShopping} />
+                  <span className={styles.navbarNotifications}>1</span>
+                </NavLink>
               </div>
             </div>
           </li>

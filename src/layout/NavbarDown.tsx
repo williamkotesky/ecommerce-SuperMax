@@ -89,7 +89,11 @@ function NavbarDown() {
             </NavLink>
           </li>
 
-          <li onClick={handleClickDropDown} ref={targetDropdown}>
+          <li
+            onClick={handleClickDropDown}
+            ref={targetDropdown}
+            className={styles.more}
+          >
             Mais+
           </li>
         </ul>
