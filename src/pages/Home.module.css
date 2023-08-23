@@ -1,0 +1,110 @@
+#homeSection {
+  height: 300vh;
+  background-color: #d4d2d2;
+}
+
+.homeTitle {
+  color: #faa508;
+  background-color: white;
+  padding: 0.7rem;
+}
+
+.sliderContainer {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  background-color: white;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 60%;
+  overflow-x: hidden;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.slideAnimation {
+  animation: slide 1s infinite linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.prev {
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next {
+  position: absolute;
+  top: 30%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.sliderInfoContainer {
+  width: 100%;
+  height: 25%;
+  margin-top: 1rem;
+}
+
+.sliderInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sliderInfoName {
+  font-size: 20px;
+}
+
+.sliderInfoOriginalPrice {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: gray;
+}
+
+.sliderInfoPromotionalPrice {
+  font-size: 30px;
+  color: green;
+  font-weight: bold;
+}
+
+.sliderInfoPromotionalText {
+  font-style: italic;
+  background-color: tomato;
+  color: white;
+  font-size: 13px;
+  padding: 4px;
+}

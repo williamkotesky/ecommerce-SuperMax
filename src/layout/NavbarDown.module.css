@@ -21,6 +21,7 @@
   background-color: blue;
 }
 
+.navbarDownContainer .offerOfTheDay,
 .navbarDownContainer .newProducts,
 .navbarDownContainer .about {
   display: none;
@@ -31,7 +32,8 @@
   width: 5rem;
   background-color: #faa508;
   position: absolute;
-  right: 3%;
+  right: 0%;
+  z-index: 1;
 }
 
 .dropdownOn ul {
@@ -45,6 +47,7 @@
 
 .dropdownOn li {
   text-align: center;
+  padding: 5px;
 }
 
 .dropdownOff {
@@ -77,6 +80,7 @@
     display: none;
   }
 
+  .navbarDownContainer .offerOfTheDay,
   .navbarDownContainer .newProducts,
   .navbarDownContainer .about {
     display: block;

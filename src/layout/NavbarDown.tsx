@@ -53,12 +53,22 @@ function NavbarDown() {
               className={({ isActive }) =>
                 isActive ? styles.active : "inactive"
               }
+              to="/categorias"
+            >
+              Categorias
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styles.active : "inactive"
+              }
               to="/promocoes"
             >
               Promoções
             </NavLink>
           </li>
-          <li>
+          <li className={styles.offerOfTheDay}>
             <NavLink
               className={({ isActive }) =>
                 isActive ? styles.active : "inactive"
@@ -99,6 +109,16 @@ function NavbarDown() {
         </ul>
         <div className={styles[dropdownMenu]}>
           <ul>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.active : "inactive"
+                }
+                to="/ofertasDoDia"
+              >
+                Ofertas do Dia
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 className={({ isActive }) =>
