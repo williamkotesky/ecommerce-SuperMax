@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Home.module.css";
 import { usePromotionContext } from "../contexts/PromotionContext";
+import ProductCard from "../components/ProductCard";
 
 function Home() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -18,14 +19,12 @@ function Home() {
     sliderRef.current && sliderIndex === 2
       ? setSliderIndex(0)
       : setSliderIndex(sliderIndex + 1);
-    console.log("right, o anterior é " + sliderIndex);
   };
 
   const handleClickPrev = () => {
     sliderRef.current && sliderIndex === 0
       ? setSliderIndex(2)
       : setSliderIndex(sliderIndex - 1);
-    console.log("left, o anterior é " + sliderIndex);
   };
 
   useEffect(() => {
@@ -46,6 +45,8 @@ function Home() {
 
   useEffect(() => {
     slidertimer && clearTimeout(slidertimer);
+    // event.preventDefault()
+    // event: React.MouseEvent
     sliderTimerFunction();
     return () => {
       slidertimer && clearTimeout(slidertimer);
@@ -62,17 +63,29 @@ function Home() {
           <div ref={sliderRef} className={styles.slider}>
             <div className={styles.slide}>
               {promotionProducts[1] && (
-                <img src={promotionProducts[1].image} alt="Imagem 1" />
+                <img
+                  src={promotionProducts[1].image}
+                  alt="Imagem 1"
+                  loading="lazy"
+                />
               )}
             </div>
             <div className={styles.slide}>
               {promotionProducts[1] && (
-                <img src={promotionProducts[2].image} alt="Imagem 1" />
+                <img
+                  src={promotionProducts[2].image}
+                  alt="Imagem 1"
+                  loading="lazy"
+                />
               )}
             </div>
             <div className={styles.slide}>
               {promotionProducts[1] && (
-                <img src={promotionProducts[3].image} alt="Imagem 1" />
+                <img
+                  src={promotionProducts[3].image}
+                  alt="Imagem 1"
+                  loading="lazy"
+                />
               )}
             </div>
           </div>
@@ -92,7 +105,7 @@ function Home() {
                 <span className={styles.sliderInfoName}>{`${
                   promotionProducts[sliderIndex + 1].name
                 } ${promotionProducts[sliderIndex + 1].brand}`}</span>
-                <span className={styles.sliderInfoOriginalPrice}>{` R$${
+                <span className={styles.sliderInfoOriginalPrice}>{`R$${
                   promotionProducts[sliderIndex + 1].price
                 }`}</span>
                 <span className={styles.sliderInfoPromotionalPrice}>{` R$${(
@@ -107,6 +120,15 @@ function Home() {
         </div>
 
         <h2 className={styles.homeTitle}>Setor alimentício</h2>
+        <div>
+          {promotionProducts[1] && (
+            <ProductCard
+              productName={promotionProducts[0].name}
+              productPrice={promotionProducts[0].price}
+              productImage={promotionProducts[0].image}
+            />
+          )}
+        </div>
       </section>
     </>
   );

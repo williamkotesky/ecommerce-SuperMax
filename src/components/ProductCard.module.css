@@ -1,0 +1,15 @@
+.cardContainer {
+  border: 1px black solid;
+  width: 8rem;
+  height: 10rem;
+}
+
+.cardImageContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.cardImageContainer img {
+  height: 100%;
+  width: 100%;
+}
