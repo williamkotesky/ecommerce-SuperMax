@@ -108,3 +108,13 @@
   font-size: 13px;
   padding: 4px;
 }
+
+.productsCardsContainer {
+  width: 100%;
+  height: 200vw;
+  background-color: rgb(245, 200, 116);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

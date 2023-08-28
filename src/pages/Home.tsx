@@ -28,25 +28,55 @@ function Home() {
   };
 
   useEffect(() => {
-    sliderRef.current &&
+    const isVisible = scrollToViewport();
+    isVisible &&
+      sliderRef.current &&
       sliderRef.current.children[sliderIndex].scrollIntoView({
         inline: "center",
         behavior: "smooth",
         block: "nearest",
       });
+
+    // if (sliderRef.current) {
+    //   const rect = sliderRef.current.getBoundingClientRect();
+    //   const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+    //   isVisible &&
+    //     sliderRef.current.children[sliderIndex].scrollIntoView({
+    //       inline: "center",
+    //       behavior: "smooth",
+    //       block: "nearest",
+    //     });
+    // }
   }, [sliderIndex]);
+
+  function scrollToViewport(): boolean {
+    if (sliderRef.current) {
+      const rect = sliderRef.current.getBoundingClientRect();
+      const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+      return isVisible;
+    }
+    return false;
+  }
 
   function sliderTimerFunction() {
     const timer = setTimeout(() => {
-      handleClickNext();
+      const isVisible = scrollToViewport();
+      console.log(isVisible);
+      isVisible && handleClickNext();
+
+      // if (sliderRef.current) {
+      //   const rect = sliderRef.current.getBoundingClientRect();
+      //   const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+      // }
     }, 10000);
     setSliderTimer(timer);
   }
 
   useEffect(() => {
     slidertimer && clearTimeout(slidertimer);
-    // event.preventDefault()
-    // event: React.MouseEvent
     sliderTimerFunction();
     return () => {
       slidertimer && clearTimeout(slidertimer);
@@ -120,7 +150,7 @@ function Home() {
         </div>
 
         <h2 className={styles.homeTitle}>Setor alimentício</h2>
-        <div>
+        <div className={styles.productsCardsContainer}>
           {promotionProducts[1] && (
             <ProductCard
               productName={promotionProducts[0].name}

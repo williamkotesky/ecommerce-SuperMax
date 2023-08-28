@@ -1,7 +1,14 @@
 .cardContainer {
-  border: 1px black solid;
-  width: 8rem;
-  height: 10rem;
+  /* border: 1px black solid; */
+  border-radius: 10px;
+  width: 15rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border-radius: 100px;
 }
 
 .cardImageContainer {
@@ -11,5 +18,10 @@
 
 .cardImageContainer img {
   height: 100%;
+  width: 100%;
+}
+
+.cardInfoContainer {
+  background-color: white;
   width: 100%;
 }
